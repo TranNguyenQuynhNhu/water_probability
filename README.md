@@ -18,3 +18,6 @@ Note: Trước khi chạy, nhớ update read.csv("~/water_potability.csv"). Ví 
 
 2. Handling missing values: Không tính toán % missing chỉ có sum.
 
+3. q1: điểm mà 25% dữ liệu nằm bên trái; q3: điểm mà 75% dữ liệu nằm bên trái.
+
+4. iqr = q3 - q1: khoảng giá trị chứa 50% dữ liệu trung tâm.
