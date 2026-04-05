@@ -6,7 +6,7 @@
    
 2. Mở Terminal.
    
-3. Gõ R (Nhớ tải R trước).
+3. Gõ R (Nhớ tải R trước) hoặc & "C:\Program Files\R\R-4.5.3\bin\R.exe".
    
 4. Gõ source("~/Code.R"). Ví dụ: source("C:/Users/Nhu/Desktop/XSTK/Code.R").
    
