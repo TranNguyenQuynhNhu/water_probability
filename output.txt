@@ -1,0 +1,314 @@
+First 10 rows of the dataset:
+          ph Hardness   Solids Chloramines  Sulfate Conductivity Organic_carbon
+1         NA 204.8905 20791.32    7.300212 368.5164     564.3087      10.379783
+2   3.716080 129.4229 18630.06    6.635246       NA     592.8854      15.180013
+3   8.099124 224.2363 19909.54    9.275884       NA     418.6062      16.868637
+4   8.316766 214.3734 22018.42    8.059332 356.8861     363.2665      18.436524
+5   9.092223 181.1015 17978.99    6.546600 310.1357     398.4108      11.558279
+6   5.584087 188.3133 28748.69    7.544869 326.6784     280.4679       8.399735
+7  10.223862 248.0717 28749.72    7.513408 393.6634     283.6516      13.789695
+8   8.635849 203.3615 13672.09    4.563009 303.3098     474.6076      12.363817
+9         NA 118.9886 14285.58    7.804174 268.6469     389.3756      12.706049
+10 11.180284 227.2315 25484.51    9.077200 404.0416     563.8855      17.927806
+   Trihalomethanes Turbidity Potability
+1         86.99097  2.963135          0
+2         56.32908  4.500656          0
+3         66.42009  3.055934          0
+4        100.34167  4.628771          0
+5         31.99799  4.075075          0
+6         54.91786  2.559708          0
+7         84.60356  2.672989          0
+8         62.79831  4.401425          0
+9         53.92885  3.595017          0
+10        71.97660  4.370562          0
+
+Structure of the dataset:
+'data.frame':	3276 obs. of  10 variables:
+ $ ph             : num  NA 3.72 8.1 8.32 9.09 ...
+ $ Hardness       : num  205 129 224 214 181 ...
+ $ Solids         : num  20791 18630 19910 22018 17979 ...
+ $ Chloramines    : num  7.3 6.64 9.28 8.06 6.55 ...
+ $ Sulfate        : num  369 NA NA 357 310 ...
+ $ Conductivity   : num  564 593 419 363 398 ...
+ $ Organic_carbon : num  10.4 15.2 16.9 18.4 11.6 ...
+ $ Trihalomethanes: num  87 56.3 66.4 100.3 32 ...
+ $ Turbidity      : num  2.96 4.5 3.06 4.63 4.08 ...
+ $ Potability     : int  0 0 0 0 0 0 0 0 0 0 ...
+NULL
+
+Missing values before handling:
+             ph        Hardness          Solids     Chloramines         Sulfate 
+            491               0               0               0             781 
+   Conductivity  Organic_carbon Trihalomethanes       Turbidity      Potability 
+              0               0             162               0               0 
+
+Missing values after handling:
+             ph        Hardness          Solids     Chloramines         Sulfate 
+              0               0               0               0               0 
+   Conductivity  Organic_carbon Trihalomethanes       Turbidity      Potability 
+              0               0               0               0               0 
+
+Outlier ratio statistics:
+                outlier_count total outlier_rate
+ph                        142  3276  0.043345543
+Hardness                   83  3276  0.025335775
+Solids                     47  3276  0.014346764
+Chloramines                61  3276  0.018620269
+Sulfate                   264  3276  0.080586081
+Conductivity               11  3276  0.003357753
+Organic_carbon             25  3276  0.007631258
+Trihalomethanes            54  3276  0.016483516
+Turbidity                  19  3276  0.005799756
+Potability                  0  3276  0.000000000
+
+Group-wise descriptive statistics (by Potability):
+water$Potability: 0
+                count   mean_value      std_dev  min_value   max_value
+ph               1998     7.077736    1.5455903   0.000000    14.00000
+Hardness         1998   196.733292   31.0575397  98.452931   304.23591
+Solids           1998 21777.490788 8543.0687880 320.942611 61227.19601
+Chloramines      1998     7.092175    1.5010449   1.683993    12.65336
+Sulfate          1998   334.200184   31.9482935 203.444521   460.10707
+Conductivity     1998   426.730454   80.0473166 181.483754   753.34262
+Organic_carbon   1998    14.364335    3.3345536   4.371899    28.30000
+Trihalomethanes  1998    66.320635   15.6427868   0.738000   120.03008
+Turbidity        1998     3.965800    0.7802824   1.450000     6.73900
+                median_value       q1.25%       q3.75%
+ph                  7.036752     6.224046     7.940697
+Hardness          197.123423   177.823265   216.120687
+Solids          20809.618280 15663.057382 27006.249009
+Chloramines         7.090334     6.155640     8.066462
+Sulfate           333.073546   319.354715   348.316746
+Conductivity      422.229331   368.498530   480.677198
+Organic_carbon     14.293508    12.101057    16.649485
+Trihalomethanes    66.622485    56.441831    76.518849
+Turbidity           3.948076     3.444062     4.496106
+------------------------------------------------------------ 
+water$Potability: 1
+                count   mean_value      std_dev   min_value    max_value
+ph               1278     7.068655    1.3440133   0.2274991    13.175402
+Hardness         1278   195.800744   35.5470408  47.4320000   323.124000
+Solids           1278 22383.991018 9101.0102083 728.7508296 56488.672413
+Chloramines      1278     7.169338    1.7029877   0.3520000    13.127000
+Sulfate          1278   332.683125   41.8659268 129.0000000   481.030642
+Conductivity     1278   425.383800   82.0484462 201.6197368   695.369528
+Organic_carbon   1278    14.160893    3.2639068   2.2000000    23.604298
+Trihalomethanes  1278    66.543247   15.9719499   8.1758764   124.000000
+Turbidity        1278     3.968328    0.7808418   1.4922066     6.494249
+                median_value       q1.25%       q3.75%
+ph                  7.036752     6.351824     7.780068
+Hardness          196.632907   174.330531   218.003420
+Solids          21199.386614 15668.985035 27973.236446
+Chloramines         7.215163     6.094134     8.199261
+Sulfate           333.073546   313.052947   354.807924
+Conductivity      420.712729   360.939023   484.155911
+Organic_carbon     14.162809    12.033897    16.356245
+Trihalomethanes    66.622485    56.911186    77.067457
+Turbidity           3.958576     3.430909     4.509569
+
+Potability distribution:
+   0    1 
+1998 1278 
+
+pH group distribution:
+   Low Medium   High 
+   968   1249   1059 
+
+Sulfate group distribution:
+   Low Medium   High 
+   474   1747   1055 
+
+Cross table of pH and Sulfate groups:        
+         Low Medium High
+  Low    134    548  286
+  Medium 201    631  417
+  High   139    568  352
+
+Shapiro-Wilk normality test results:
+pH group: 1 
+Sulfate group: 1 
+W = 0.9942 
+p-value = 0.86485 
+
+pH group: 2 
+Sulfate group: 1 
+W = 0.99636 
+p-value = 0.91846 
+
+pH group: 3 
+Sulfate group: 1 
+W = 0.98661 
+p-value = 0.19644 
+
+pH group: 1 
+Sulfate group: 2 
+W = 0.99628 
+p-value = 0.22913 
+
+pH group: 2 
+Sulfate group: 2 
+W = 0.99709 
+p-value = 0.32182 
+
+pH group: 3 
+Sulfate group: 2 
+W = 0.99741 
+p-value = 0.52285 
+
+pH group: 1 
+Sulfate group: 3 
+W = 0.99257 
+p-value = 0.16446 
+
+pH group: 2 
+Sulfate group: 3 
+W = 0.99616 
+p-value = 0.41136 
+
+pH group: 3 
+Sulfate group: 3 
+W = 0.99508 
+p-value = 0.32717 
+
+Levene's Test for Homogeneity of Variance (center = median)
+        Df F value Pr(>F)
+group    8  0.9833 0.4469
+      3267               
+
+Two-way ANOVA results for organic carbon (pH group - sulfate group):
+                         Df Sum Sq Mean Sq F value Pr(>F)  
+pH_group                  2     21   10.32   0.944 0.3893  
+Sulfate_group             2     78   38.81   3.548 0.0289 *
+pH_group:Sulfate_group    4     14    3.45   0.315 0.8679  
+Residuals              3267  35729   10.94                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Organic_carbon ~ pH_group * Sulfate_group, data = water)
+
+$Sulfate_group
+                    diff          lwr       upr     p adj
+Medium-Low   0.438069352  0.036484687 0.8396540 0.0285103
+High-Low     0.435812913  0.007040528 0.8645853 0.0453293
+High-Medium -0.002256439 -0.304599391 0.3000865 0.9998312
+
+Training set dimensions:
+[1] 2293   12
+
+Testing set dimensions:
+[1] 983  12
+
+Potability frequency in training set:
+   0    1 
+1414  879 
+
+Model 1: Full logistic regression model
+Call:
+glm(formula = Potability ~ ph + Hardness + Solids + Chloramines + 
+    Sulfate + Conductivity + Organic_carbon + Trihalomethanes + 
+    Turbidity, family = "binomial", data = train_data, weights = weights)
+
+Coefficients:
+                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      4.500e-02  6.378e-01   0.071 0.943760    
+ph               1.556e-02  2.616e-02   0.595 0.551805    
+Hardness        -1.546e-03  1.161e-03  -1.332 0.182957    
+Solids           1.467e-05  4.419e-06   3.320 0.000899 ***
+Chloramines      4.022e-02  2.347e-02   1.713 0.086674 .  
+Sulfate         -7.537e-04  1.028e-03  -0.733 0.463629    
+Conductivity     3.173e-04  4.681e-04   0.678 0.497898    
+Organic_carbon  -2.319e-02  1.141e-02  -2.031 0.042212 *  
+Trihalomethanes  2.431e-04  2.389e-03   0.102 0.918946    
+Turbidity       -8.680e-03  4.759e-02  -0.182 0.855292    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3920.4  on 2292  degrees of freedom
+Residual deviance: 3898.6  on 2283  degrees of freedom
+AIC: 4393.2
+
+Number of Fisher Scoring iterations: 4
+
+Model 2: Only solids and organic_carbon logistic regression model
+Call:
+glm(formula = Potability ~ Solids + Organic_carbon, family = "binomial", 
+    data = train_data, weights = weights)
+
+Coefficients:
+                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)    -3.997e-03  1.888e-01  -0.021 0.983114    
+Solids          1.493e-05  4.315e-06   3.459 0.000542 ***
+Organic_carbon -2.293e-02  1.138e-02  -2.016 0.043842 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3920.4  on 2292  degrees of freedom
+Residual deviance: 3904.7  on 2290  degrees of freedom
+AIC: 4385.7
+
+Number of Fisher Scoring iterations: 4
+
+First 10 rows of test data with predictions:
+          ph Hardness   Solids Chloramines  Sulfate Conductivity Organic_carbon
+10 11.180284 227.2315 25484.51    9.077200 404.0416     563.8855      17.927806
+12  7.974522 218.6933 18767.66    8.110385 333.0735     364.0982      14.525746
+20  7.371050 214.4966 25630.32    4.432669 335.7544     469.9146      12.509164
+22  6.660212 168.2837 30944.36    5.858769 310.9309     523.6713      17.884235
+29  7.036752 266.4210 26362.97    7.700063 395.3895     364.4801      10.348951
+36  5.115817 191.9527 19620.55    6.060713 323.8364     441.7484      10.966486
+37  3.641630 183.9087 24752.07    5.538314 286.0596     456.8601       9.034067
+41  7.036752 233.8590 11703.92    4.599388 309.0393     349.3996      18.338893
+45  4.758439 183.3495 21568.43    4.731349 333.0735     403.9442      18.668229
+46  5.702926 216.8505 35606.44    7.184351 333.0735     504.6383      16.140790
+   Trihalomethanes Turbidity Potability pH_group Sulfate_group prediction
+10        71.97660  4.370562          0     High          High          0
+12        76.48591  4.011718          0     High        Medium          0
+20        62.79728  2.560299          0   Medium        Medium          1
+22        77.04232  3.749701          0   Medium        Medium          1
+29        53.00838  3.991564          0   Medium          High          1
+36        49.23823  3.902089          0      Low        Medium          1
+37        73.59466  3.464353          0      Low           Low          1
+41        42.67747  3.510004          0   Medium        Medium          0
+45        66.91240  4.542801          0      Low        Medium          0
+46        77.53618  4.137739          0      Low        Medium          1
+
+Confusion Matrix and Statistics
+
+          Reference
+Prediction   0   1
+         0 297 221
+         1 287 178
+                                         
+               Accuracy : 0.4832         
+                 95% CI : (0.4516, 0.515)
+    No Information Rate : 0.5941         
+    P-Value [Acc > NIR] : 1.000000       
+                                         
+                  Kappa : -0.0442        
+                                         
+ Mcnemar's Test P-Value : 0.003928       
+                                         
+            Sensitivity : 0.4461         
+            Specificity : 0.5086         
+         Pos Pred Value : 0.3828         
+         Neg Pred Value : 0.5734         
+             Prevalence : 0.4059         
+         Detection Rate : 0.1811         
+   Detection Prevalence : 0.4730         
+      Balanced Accuracy : 0.4773         
+                                         
+       'Positive' Class : 1              
+                                         
+Model evaluation result:
+[1] "AUC value: 0.523"
+
+VIF results:
+        Solids Organic_carbon 
+      1.001055       1.001055 
