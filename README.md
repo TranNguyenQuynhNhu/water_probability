@@ -12,6 +12,8 @@
    
 Note: Trước khi chạy, nhớ update read.csv("~/water_potability.csv"). Ví dụ: read.csv("C:/Users/Nhu/Desktop/XSTK/water_potability.csv").
 
+Note: các output hình ảnh trong folder picture.
+
 ## Thay đổi so với code mẫu
 
 1. Thêm print() để in ra hết khi chạy source code.
