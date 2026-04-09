@@ -86,7 +86,18 @@ print(result)
 
 ## POTABILITY DISTRIBUTION ANALYSIS
 cat("\nPotability distribution:")
-print(table(water$Potability))
+pot_table <- table(water$Potability)
+print(pot_table)
+par(mar = c(6, 6, 4, 2))
+barplot(pot_table,
+        main = "Potability Distribution",
+        xlab = "Potability",
+        ylab = "Frequency",
+        col = c("lightblue", "pink"),
+        cex.names = 1.5,
+        cex.axis = 1.5,
+        cex.lab = 1.5,
+        cex.main = 1.8)
 
 ## FEATURE DISTRIBUTION BY POTABILITY CLASSES
 select_data <- water[, 1:9]
