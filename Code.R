@@ -70,8 +70,7 @@ water$Potability <- as.factor(water$Potability)
 
 ## GROUP-WISE DESCRIPTIVE ANALYSIS
 describe <- function(x) {
-  c(count = length(x),
-    mean_value = mean(x),
+  c(mean_value = mean(x),
     std_dev = sd(x),
     min_value = min(x),
     max_value = max(x),
