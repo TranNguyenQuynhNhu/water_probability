@@ -1,9 +1,10 @@
+sink("output.txt")
 ### DATA PREPROCESSING ###
 
 ## READING THE DATASET
 
 # Reading data
-water <- read.csv("C:/Users/Nhu/Desktop/XSTK/water_potability.csv")
+water <- read.csv("C:/Users/Nhu/Desktop/XSTK/water_probability/water_potability.csv")
 
 # Basic info
 cat("First 10 rows of the dataset:\n")
@@ -227,7 +228,7 @@ print(summary(model_2))
 ## PREDICTION
 prediction <- predict(model_2, test_data, type = "response")
 test_data$prediction <- round(prediction)
-cat("\nFirst 10 rows of test data with predictions:")
+cat("First 10 rows of test data with predictions:\n")
 print(head(test_data, 10))
 
 ## CONFUSION MATRIX
@@ -236,6 +237,7 @@ confusion_matrix <- confusionMatrix(
                                     as.factor(test_data$prediction),
                                     as.factor(test_data$Potability),
                                     positive = "1")
+cat("\n")
 print(confusion_matrix)
 
 ## ROC CURVE AND AUC ANALYSIS
@@ -245,8 +247,26 @@ roc_curve <- roc(test_data$Potability, prediction)
 plot(roc_curve, col = "blue", lwd = 2, main = "ROC Curve - Logistic Regression")
 abline(a = 0, b = 1, lty = 2, col = "red")
 auc_value <- auc(roc_curve)
-print(paste("AUC:", round(auc_value, 3)))
+cat("\nModel evaluation result:\n")
+print(paste("AUC value:", round(auc_value, 3)))
 
 ## MULTICOLLINEARITY ASSESSMENT
+library(car)
+library(lmtest)
+cat("\nVIF results:\n")
+print(vif(model_2))
+
 ## LINEARITY OF THE LOGIT
+plot(train_data$Solids,
+     log(model_2$fitted.values / (1 - model_2$fitted.values)),
+     main = "Linearity check: Solids vs log-odds",
+     xlab = "Solids", ylab = "log-odds")
+
+plot(train_data$Organic_carbon,
+     log(model_2$fitted.values / (1 - model_2$fitted.values)),
+     main = "Linearity check: Organic_carbon vs log-odds",
+     xlab = "Organic_carbon", ylab = "log-odds")
+
 ## DETECTION OF INFLUENTIAL OUTLIERS
+plot(model_2, which = 5)
+sink()

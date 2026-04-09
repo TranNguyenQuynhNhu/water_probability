@@ -175,8 +175,7 @@ Levene's Test for Homogeneity of Variance (center = median)
 group    8  0.9833 0.4469
       3267               
 
-Two-way ANOVA results for organic carbon (pH group - sulfate group):
-                         Df Sum Sq Mean Sq F value Pr(>F)  
+Two-way ANOVA results for organic carbon (pH group - sulfate group):                         Df Sum Sq Mean Sq F value Pr(>F)  
 pH_group                  2     21   10.32   0.944 0.3893  
 Sulfate_group             2     78   38.81   3.548 0.0289 *
 pH_group:Sulfate_group    4     14    3.45   0.315 0.8679  
@@ -306,6 +305,7 @@ Prediction   0   1
                                          
        'Positive' Class : 1              
                                          
+
 Model evaluation result:
 [1] "AUC value: 0.523"
 
