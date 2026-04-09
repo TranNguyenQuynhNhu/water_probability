@@ -8,7 +8,7 @@
    
 3. Gõ R (Nhớ tải R trước) hoặc & "C:\Program Files\R\R-4.5.3\bin\R.exe".
    
-4. Gõ source("~/Code.R"). Ví dụ: source("C:/Users/Nhu/Desktop/XSTK/Code.R").
+4. Gõ source("~/Code.R"). Ví dụ: source("C:/Users/Nhu/Desktop/XSTK/water_probability/Code.R").
    
 Note: 
 - Trước khi chạy, nhớ update read.csv("~/water_potability.csv"). Ví dụ: read.csv("C:/Users/Nhu/Desktop/XSTK/water_potability.csv").
