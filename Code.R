@@ -124,6 +124,8 @@ for (feature in features) {
 ## CORRELATION MATRIX
 par(mfrow = c(1, 1))
 cor_matrix <- cor(water[, 1:9], use = "complete.obs")
+cat("\nCorrelation matrix:\n")
+print(cor_matrix)
 library(corrplot)
 corrplot(cor_matrix,
          method = "color",
