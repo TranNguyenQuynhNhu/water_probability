@@ -11,7 +11,7 @@
 4. Gõ source("~/Code.R"). Ví dụ: source("C:/Users/Nhu/Desktop/XSTK/water_probability/Code.R").
    
 Note: 
-- Trước khi chạy, nhớ update read.csv("~/water_potability.csv"). Ví dụ: read.csv("C:/Users/Nhu/Desktop/XSTK/water_potability.csv").
+- Trước khi chạy, nhớ update read.csv("~/water_potability.csv"). Ví dụ: read.csv("C:/Users/Nhu/Desktop/XSTK/water_probability/water_potability.csv").
 
 - Các output hình ảnh trong folder picture.
 
