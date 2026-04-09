@@ -1,4 +1,3 @@
-sink("output.txt")
 ### DATA PREPROCESSING ###
 
 ## READING THE DATASET
@@ -269,4 +268,3 @@ plot(train_data$Organic_carbon,
 
 ## DETECTION OF INFLUENTIAL OUTLIERS
 plot(model_2, which = 5)
-sink()
