@@ -70,13 +70,27 @@ water$Potability <- as.factor(water$Potability)
 
 ## GROUP-WISE DESCRIPTIVE ANALYSIS
 describe <- function(x) {
-  c(mean_value = mean(x),
-    std_dev = sd(x),
-    min_value = min(x),
-    max_value = max(x),
-    median_value = median(x),
-    q1 = quantile(x, probs = 0.25),
-    q3 = quantile(x, probs = 0.75))
+  x <- x[!is.na(x)]
+  n <- length(x)
+  mean_val <- mean(x)
+  sd_unbiased <- sd(x)
+  sd_biased <- sqrt(sum((x - mean_val)^2) / n)
+  q1 <- quantile(x, probs = 0.25)
+  q2 <- median(x)
+  q3 <- quantile(x, probs = 0.75)
+  min_val <- min(x)
+  max_val <- max(x)
+
+  c(count = n,
+    mean = mean_val,
+    sd_unbiased = sd_unbiased,
+    sd_biased = sd_biased,
+    min = min_val,
+    max = max_val,
+    range = max_val - min_val,
+    Q1 = q1,
+    Q2_Median = q2,
+    Q3 = q3)
 }
 cat("\nGroup-wise descriptive statistics (by Potability):\n")
 result <- by(water[, 1:9], water$Potability, function(df) {
