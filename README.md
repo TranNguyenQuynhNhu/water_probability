@@ -17,7 +17,7 @@ Note:
 
 - Thêm file output.txt tổng hợp các output.
 
-## Thay đổi so với code mẫu
+## Update
 
 1. Thêm print() để in ra hết khi chạy source code.
 
